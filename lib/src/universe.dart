@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
+import 'http_request_exception.dart';
 import 'urls.dart';
 
 /// Defines a Universe object that requires a universeId and an apiKey for authentication of API calls.
@@ -21,7 +22,7 @@ class Universe {
   /// Asynchronously lists data stores with optional filters.
   ///
   /// [prefix] (optional) filters data stores by prefix.
-  /// [limit] (optional) limits the number of data stores returned. Default is 1.
+  /// [limit] (optional) limits the number of data stores returned, default is 1.
   /// [cursor] (optional) specifies the pagination cursor for the next page of data stores.
   Future<DatastoreList> listDataStoresAsync({String? prefix, int? limit = 1, String? cursor}) async {
     // Construct the base URL with limit parameter
@@ -44,24 +45,6 @@ class Universe {
     // Decode the response body and create a DatastoreList object from it
     final reponseJson = json.decode(response.body) as Map<String, dynamic>;
     return DatastoreList.fromJson(reponseJson);
-  }
-}
-
-/// An exception thrown when an HTTP request fails.
-///
-/// [universeId] specifies the id of the universe for which the request failed.
-/// [statusCode] (optional) specifies the HTTP status code of the failed request.
-class HttpRequestException implements Exception {
-  final int universeId;
-  final int? statusCode;
-  final String? reasonPhrase;
-
-  HttpRequestException({required this.universeId, this.statusCode, this.reasonPhrase});
-
-  @override
-  String toString() {
-    // Construct and return an error message with the status code and universe id
-    return 'Error: [$statusCode] $reasonPhrase. UniverseId: $universeId.';
   }
 }
 

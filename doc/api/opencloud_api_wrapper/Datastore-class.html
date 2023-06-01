@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the Universe class from the opencloud_api_wrapper library, for the Dart programming language.">
-  <title>Universe class - opencloud_api_wrapper library - Dart API</title>
+  <meta name="description" content="API docs for the Datastore class from the opencloud_api_wrapper library, for the Dart programming language.">
+  <title>Datastore class - opencloud_api_wrapper library - Dart API</title>
 
 
   
@@ -31,9 +31,9 @@
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../index.html">opencloud_api_wrapper</a></li>
     <li><a href="../opencloud_api_wrapper/opencloud_api_wrapper-library.html">opencloud_api_wrapper</a></li>
-    <li class="self-crumb">Universe class</li>
+    <li class="self-crumb">Datastore class</li>
   </ol>
-  <div class="self-name">Universe</div>
+  <div class="self-name">Datastore</div>
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
@@ -44,14 +44,14 @@
 
   <div id="dartdoc-main-content" class="main-content">
       <div>
-<h1><span class="kind-class">Universe</span> class 
+<h1><span class="kind-class">Datastore</span> class 
     <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
  
 </h1></div>
 
     
 <section class="desc markdown">
-  <p>Defines a Universe object that requires a universeId and an apiKey for authentication of API calls.</p>
+  <p>A class representing a datastore in a Universe.</p>
 </section>
 
 
@@ -61,11 +61,11 @@
     <h2>Constructors</h2>
 
     <dl class="constructor-summary-list">
-        <dt id="Universe" class="callable">
-          <span class="name"><a href="../opencloud_api_wrapper/Universe/Universe.html">Universe</a></span><span class="signature">(<span class="parameter" id="-param-universeId">{<span>required</span> <span class="type-annotation"><a href="https://api.dart.dev/stable/2.17.6/dart-core/int-class.html">int</a></span> <span class="parameter-name">universeId</span>, </span><span class="parameter" id="-param-apiKey"><span>required</span> <span class="type-annotation"><a href="https://api.dart.dev/stable/2.17.6/dart-core/String-class.html">String</a></span> <span class="parameter-name">apiKey</span>}</span>)</span>
+        <dt id="Datastore" class="callable">
+          <span class="name"><a href="../opencloud_api_wrapper/Datastore/Datastore.html">Datastore</a></span><span class="signature">(<span class="parameter" id="-param-universe">{<span>required</span> <span class="type-annotation"><a href="../opencloud_api_wrapper/Universe-class.html">Universe</a></span> <span class="parameter-name">universe</span>, </span><span class="parameter" id="-param-datastoreName"><span>required</span> <span class="type-annotation"><a href="https://api.dart.dev/stable/2.17.6/dart-core/String-class.html">String</a></span> <span class="parameter-name">datastoreName</span>, </span><span class="parameter" id="-param-scope"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.17.6/dart-core/String-class.html">String</a></span> <span class="parameter-name">scope</span> = <span class="default-value">&quot;global&quot;</span>, </span><span class="parameter" id="-param-allScopes"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.17.6/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">allScopes</span> = <span class="default-value">false</span>}</span>)</span>
         </dt>
         <dd>
-          Constuctor for a universe object
+          Creates a new instance of the Datastore class.
         </dd>
     </dl>
   </section>
@@ -74,13 +74,24 @@
       <h2>Properties</h2>
 
       <dl class="properties">
-        <dt id="apiKey" class="property">
-  <span class="name"><a href="../opencloud_api_wrapper/Universe/apiKey.html">apiKey</a></span>
+        <dt id="allScopes" class="property">
+  <span class="name"><a href="../opencloud_api_wrapper/Datastore/allScopes.html">allScopes</a></span>
+  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/2.17.6/dart-core/bool-class.html">bool</a></span> 
+
+</dt>
+<dd>
+  Whether to include all scopes when listing entries.
+  <div class="features">final</div>
+
+</dd>
+
+        <dt id="datastoreName" class="property">
+  <span class="name"><a href="../opencloud_api_wrapper/Datastore/datastoreName.html">datastoreName</a></span>
   <span class="signature">&#8594; <a href="https://api.dart.dev/stable/2.17.6/dart-core/String-class.html">String</a></span> 
 
 </dt>
 <dd>
-  The key used to authenticate API calls made to the universe.
+  The name of this Datastore.
   <div class="features">final</div>
 
 </dd>
@@ -107,13 +118,24 @@
 
 </dd>
 
-        <dt id="universeId" class="property">
-  <span class="name"><a href="../opencloud_api_wrapper/Universe/universeId.html">universeId</a></span>
-  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/2.17.6/dart-core/int-class.html">int</a></span> 
+        <dt id="scope" class="property">
+  <span class="name"><a href="../opencloud_api_wrapper/Datastore/scope.html">scope</a></span>
+  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/2.17.6/dart-core/String-class.html">String</a></span> 
 
 </dt>
 <dd>
-  The universeId the datastore belongs to. Do not mistake it for place id.
+  The scope of this Datastore.
+  <div class="features">final</div>
+
+</dd>
+
+        <dt id="universe" class="property">
+  <span class="name"><a href="../opencloud_api_wrapper/Datastore/universe.html">universe</a></span>
+  <span class="signature">&#8594; <a href="../opencloud_api_wrapper/Universe-class.html">Universe</a></span> 
+
+</dt>
+<dd>
+  The Universe this Datastore belongs to.
   <div class="features">final</div>
 
 </dd>
@@ -127,15 +149,28 @@
       id="instance-methods">
     <h2>Methods</h2>
     <dl class="callables">
-        <dt id="listDataStoresAsync" class="callable">
-  <span class="name"><a href="../opencloud_api_wrapper/Universe/listDataStoresAsync.html">listDataStoresAsync</a></span><span class="signature">(<wbr><span class="parameter" id="listDataStoresAsync-param-prefix">{<span class="type-annotation"><a href="https://api.dart.dev/stable/2.17.6/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">prefix</span>, </span><span class="parameter" id="listDataStoresAsync-param-limit"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.17.6/dart-core/int-class.html">int</a>?</span> <span class="parameter-name">limit</span> = <span class="default-value">1</span>, </span><span class="parameter" id="listDataStoresAsync-param-cursor"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.17.6/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">cursor</span>}</span>)
-    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/2.17.6/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">DatastoreList</span>&gt;</span></span>
+        <dt id="getAsync" class="callable">
+  <span class="name"><a href="../opencloud_api_wrapper/Datastore/getAsync.html">getAsync</a></span><span class="signature">(<wbr><span class="parameter" id="getAsync-param-key">{<span>required</span> <span class="type-annotation"><a href="https://api.dart.dev/stable/2.17.6/dart-core/String-class.html">String</a></span> <span class="parameter-name">key</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/2.17.6/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/2.17.6/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/2.17.6/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span></span>&gt;</span></span>
   </span>
   
 
 </dt>
 <dd>
-  Asynchronously lists data stores with optional filters.
+  Gets an entry from this Datastore asynchronously.
+  
+
+</dd>
+
+        <dt id="listAsync" class="callable">
+  <span class="name"><a href="../opencloud_api_wrapper/Datastore/listAsync.html">listAsync</a></span><span class="signature">(<wbr><span class="parameter" id="listAsync-param-prefix">{<span class="type-annotation"><a href="https://api.dart.dev/stable/2.17.6/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">prefix</span>, </span><span class="parameter" id="listAsync-param-limit"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.17.6/dart-core/int-class.html">int</a>?</span> <span class="parameter-name">limit</span> = <span class="default-value">1</span>, </span><span class="parameter" id="listAsync-param-cursor"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.17.6/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">cursor</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/2.17.6/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">EntryList</span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Lists entries in this Datastore asynchronously.
   
 
 </dd>
@@ -206,7 +241,7 @@
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
   <li><a href="../index.html">opencloud_api_wrapper</a></li>
   <li><a href="../opencloud_api_wrapper/opencloud_api_wrapper-library.html">opencloud_api_wrapper</a></li>
-  <li class="self-crumb">Universe class</li>
+  <li class="self-crumb">Datastore class</li>
 </ol>
 
 
@@ -230,24 +265,27 @@
   <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
     <ol>
 
-        <li class="section-title"><a href="../opencloud_api_wrapper/Universe-class.html#constructors">Constructors</a></li>
-          <li><a href="../opencloud_api_wrapper/Universe/Universe.html">Universe</a></li>
+        <li class="section-title"><a href="../opencloud_api_wrapper/Datastore-class.html#constructors">Constructors</a></li>
+          <li><a href="../opencloud_api_wrapper/Datastore/Datastore.html">Datastore</a></li>
 
 
     <li class="section-title">
-      <a href="../opencloud_api_wrapper/Universe-class.html#instance-properties">Properties</a>
+      <a href="../opencloud_api_wrapper/Datastore-class.html#instance-properties">Properties</a>
     </li>
-    <li><a href="../opencloud_api_wrapper/Universe/apiKey.html">apiKey</a></li>
+    <li><a href="../opencloud_api_wrapper/Datastore/allScopes.html">allScopes</a></li>
+    <li><a href="../opencloud_api_wrapper/Datastore/datastoreName.html">datastoreName</a></li>
     <li class="inherited"><a href="https://api.dart.dev/stable/2.17.6/dart-core/Object/hashCode.html">hashCode</a></li>
     <li class="inherited"><a href="https://api.dart.dev/stable/2.17.6/dart-core/Object/runtimeType.html">runtimeType</a></li>
-    <li><a href="../opencloud_api_wrapper/Universe/universeId.html">universeId</a></li>
+    <li><a href="../opencloud_api_wrapper/Datastore/scope.html">scope</a></li>
+    <li><a href="../opencloud_api_wrapper/Datastore/universe.html">universe</a></li>
 
-    <li class="section-title"><a href="../opencloud_api_wrapper/Universe-class.html#instance-methods">Methods</a></li>
-    <li><a href="../opencloud_api_wrapper/Universe/listDataStoresAsync.html">listDataStoresAsync</a></li>
+    <li class="section-title"><a href="../opencloud_api_wrapper/Datastore-class.html#instance-methods">Methods</a></li>
+    <li><a href="../opencloud_api_wrapper/Datastore/getAsync.html">getAsync</a></li>
+    <li><a href="../opencloud_api_wrapper/Datastore/listAsync.html">listAsync</a></li>
     <li class="inherited"><a href="https://api.dart.dev/stable/2.17.6/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
     <li class="inherited"><a href="https://api.dart.dev/stable/2.17.6/dart-core/Object/toString.html">toString</a></li>
 
-    <li class="section-title inherited"><a href="../opencloud_api_wrapper/Universe-class.html#operators">Operators</a></li>
+    <li class="section-title inherited"><a href="../opencloud_api_wrapper/Datastore-class.html#operators">Operators</a></li>
     <li class="inherited"><a href="https://api.dart.dev/stable/2.17.6/dart-core/Object/operator_equals.html">operator ==</a></li>
 
 

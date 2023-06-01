@@ -4,4 +4,11 @@
 
 ## 0.0.2
 
-- added Universe class
+- added `Universe` class
+    - listDataStoresAsync
+
+## 0.0.3
+
+- added `Datastore` class
+    - getAsync
+    - listAsync
