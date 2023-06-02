@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
+import 'entry_list.dart';
 import 'http_request_exception.dart';
 import 'universe.dart';
 import 'urls.dart';
@@ -13,7 +14,7 @@ class Datastore {
   /// The name of this Datastore.
   final String datastoreName;
 
-  /// The scope of this Datastore.
+  /// The scope of this Datastore, Defaults to "global".
   final String scope;
 
   /// Whether to include all scopes when listing entries.
@@ -87,19 +88,5 @@ class Datastore {
     // Decode the response body and create a DatastoreList object from it
     final responseJson = json.decode(response.body) as Map<String, dynamic>;
     return responseJson;
-  }
-}
-
-class EntryList {
-  final List<Map<String, String>> entries;
-  final String nextPageCursor;
-
-  EntryList({required this.entries, required this.nextPageCursor});
-
-  factory EntryList.fromJson(Map<String, dynamic> json) {
-    final List<Map<String, String>> list = [];
-    json['keys'].forEach((element) => list.add({'scope': element['scope'], 'key': element['key']}));
-
-    return EntryList(entries: list, nextPageCursor: json['nextPageCursor']);
   }
 }

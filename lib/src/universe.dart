@@ -46,6 +46,11 @@ class Universe {
     final reponseJson = json.decode(response.body) as Map<String, dynamic>;
     return DatastoreList.fromJson(reponseJson);
   }
+
+  @override
+  String toString() {
+    return jsonEncode({"universeId": universeId, "apiKey": apiKey});
+  }
 }
 
 /// A list of data stores with a pagination cursor for the next page.
@@ -67,6 +72,11 @@ class DatastoreList {
     // Return a new DatastoreList object with the datastores and nextPageCursor
     return DatastoreList(datastores: list, nextPageCursor: json['nextPageCursor']);
   }
+
+  @override
+  String toString() {
+    return {"datastores": datastores.toString(), "cursor": nextPageCursor}.toString();
+  }
 }
 
 /// A data store with its name and creation time.
@@ -83,5 +93,10 @@ class DatastoreDict {
   factory DatastoreDict.fromDict(Map<String, dynamic> map) {
     // Return a new DatastoreDict object with the name and createdTime from the map
     return DatastoreDict(name: map['name']!, createdTime: map['createdTime']!);
+  }
+
+  @override
+  String toString() {
+    return jsonEncode({"name": name, "createdTime": createdTime});
   }
 }

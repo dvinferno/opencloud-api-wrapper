@@ -12,3 +12,8 @@
 - added `Datastore` class
     - getAsync
     - listAsync
+
+## 0.0.4
+
+- added toString to classes
+- added `OrderedDatastore` class
